@@ -5,9 +5,7 @@ const app = express();
 
 
 app.use(cors());
-app.listen(8000, () => {
-    console.log("Server started on PORT 8000");
-})
+
 
 app.use(morgan('common'));
 const playstore = require('./playstore.js');
@@ -54,3 +52,5 @@ app.get('/playstore', (req, res) => {
   }
   res.json(filteredResults);
 });
+
+module.exports = app;
